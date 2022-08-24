@@ -57,7 +57,11 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
 
         // if logout is successful, just send a success response
         http.logout().logoutSuccessHandler(new HttpStatusReturningLogoutSuccessHandler());
+
+        //AGREGAMOS EN EL PROPERTIES EL LIMITE DE TIEMPO DE EXPIRACION DEL TOKEN
+        http.sessionManagement().invalidSessionUrl("/web/index.html"); //Te redirije al index al recargar o hacer click en otro lado desp de expirar
     }
+
 
     private void clearAuthenticationAttributes(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
