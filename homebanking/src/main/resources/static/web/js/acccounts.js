@@ -44,7 +44,7 @@ var app = new Vue({
     }
 })
 
-var time = 300000 ; //session timeout 10 seconds for the tests
+var time = 100 ; //session timeout 10 seconds for the tests
   var timeout;
 
     document.addEventListener('mousemove', function () {
