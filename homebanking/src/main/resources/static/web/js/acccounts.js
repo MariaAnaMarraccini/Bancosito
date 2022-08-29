@@ -43,3 +43,19 @@ var app = new Vue({
         this.getData();
     }
 })
+
+var time = 100 ; //session timeout 10 seconds for the tests
+  var timeout;
+
+    document.addEventListener('mousemove', function () {
+     console.log("abc")
+              clearTimeout(timeout);
+            timeout = setTimeout(function() {
+                alert("you´re going to log out!");
+                axios.post("/api/logout")
+                window.location.href="/web/index.html"
+            },time);
+
+
+
+        });
